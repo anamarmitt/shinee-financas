@@ -9,7 +9,6 @@ const TotalStyled = styled.div`
   font-size: 1.2rem;
   padding: 4px;
   font-weight: 400;
-  border: 1px solid black;
 `;
 
 export default TotalStyled;

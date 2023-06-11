@@ -6,7 +6,13 @@ import GraficoContainer from "./Grafico.style";
 function Grafico({ saldoGrafico }) {
   return (
     <GraficoContainer>
-      <Bar data={saldoGrafico} />
+      <Bar
+        data={saldoGrafico}
+        options={{
+          responsive: true,
+          maintainAspectRatio: false,
+        }}
+      />
     </GraficoContainer>
   );
 }

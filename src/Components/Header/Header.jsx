@@ -1,10 +1,13 @@
 import React from "react";
+import HeaderStyled from "./Header.styled";
+import diamond from "../../Assets/diamond.png";
 
 function Header() {
   return (
-    <div>
+    <HeaderStyled>
       <h1>Olá, Ana</h1>
-    </div>
+      <img src={diamond} />
+    </HeaderStyled>
   );
 }
 

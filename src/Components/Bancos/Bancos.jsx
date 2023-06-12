@@ -6,15 +6,18 @@ import BancoCadastradoContainer from "./BancoCadastrado.style";
 function Bancos() {
   let nextId = 3;
 
-  //const [banco, setBanco] = useState([
   const bancosCadastrados = [
     {
       id: 1,
+      agencia: 123456,
+      conta: 879,
       nome: "Santander",
       saldo: 14206.0,
     },
     {
       id: 2,
+      agencia: 543210,
+      conta: 989,
       nome: "Nubank",
       saldo: 14206.0,
     },
@@ -24,7 +27,7 @@ function Bancos() {
   const [saldo, setSaldo] = useState(0);
   const [banco, setBanco] = useState(bancosCadastrados);
 
-  function cadastrarBanco() {
+  const cadastrarBanco = () => {
     const insertAt = 3;
     const novoBanco = [
       ...banco.slice(0, insertAt),
@@ -35,23 +38,14 @@ function Bancos() {
     setBanco(novoBanco);
     setNome("");
     //setSaldo(0);
-  }
+  };
 
-  //const cadastraBanco = () => {
-  //  setBanco([...banco, { id: nextId++, nome: banco }]);
-  //};
+  const deletarBanco = (id) => {
+    const bancosAtuais = banco.filter((b) => b.id !== id);
+    setBanco(bancosAtuais);
+  };
 
-  //const [banco, setBanco] = useState("");
-  //const [agencia, setAgencia] = useState("");
-
-  //const cadastraBanco = () => {
-  //bancosCadastrados.push({
-  // banco: { setBanco },
-  // saldo: 0,
-  //});
-
-  //dar push no array de banco
-  //};
+  //funciona mas deleta todos os novos itens tentar pop
 
   return (
     <>
@@ -67,13 +61,14 @@ function Bancos() {
           }}
         ></input>
         <input type="number" placeholder="Agência"></input>
+        <input type="number" placeholder="Numero da conta"></input>
         <button onClick={cadastrarBanco}>Cadastrar</button>
       </CadastroContainer>
       {banco.map((banco, saldo) => (
         <BancoCadastradoContainer>
           <p key={banco.id}>{banco.nome}</p>
           <p key={saldo.id}>{banco.saldo}</p>
-          <button>Deletar</button>
+          <button onClick={() => deletarBanco(banco.id)}>Deletar</button>
         </BancoCadastradoContainer>
       ))}
     </>

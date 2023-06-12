@@ -5,6 +5,7 @@ import Total from "../Total/Total";
 import Grafico from "../Chart/Grafico";
 import { DadosUsuario } from "../../Dados";
 import Bancos from "../Bancos/Bancos";
+import Transacoes from "../Transacoes/Transacoes";
 
 function Home() {
   const [dadosSaldo, setDadosSaldo] = useState({
@@ -30,6 +31,7 @@ function Home() {
       <Total />
       <Grafico saldoGrafico={dadosSaldo} />
       <Bancos />
+      <Transacoes />
     </HomeContainer>
   );
 }

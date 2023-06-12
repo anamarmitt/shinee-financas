@@ -5,6 +5,7 @@ const BancoCadastradoContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 380px;
+  height: 20px;
   margin: 0 auto;
   margin-top: 4px;
   background-color: #fff;

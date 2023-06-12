@@ -36,7 +36,17 @@ input{
   color: #363636;
   border: none;
   box-shadow: none;
-  appearance: none;
+}
+button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  border-radius: 2px;
+  border: 1px solid #d9d9d9;
+  color: #128563;
+  background-color: #fff;
+  cursor: pointer;
 }
 `;
 

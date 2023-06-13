@@ -12,6 +12,7 @@ const BancoCadastradoContainer = styled.div`
   border-radius: 4px;
   color: #363636;
   padding: 4px;
+  font-size: 0.8rem;
 `;
 
 export default BancoCadastradoContainer;

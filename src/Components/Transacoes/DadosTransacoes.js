@@ -6,7 +6,7 @@ export const transacoesCadastradas = [
     valor: 4000.0,
   },
   {
-    bancoId: 1,
+    bancoId: 2,
     tipo: "Tranferência",
     data: "10-03-2023",
     valor: 180.0,

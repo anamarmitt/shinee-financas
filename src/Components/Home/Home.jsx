@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import HomeContainer from "./Home.styled";
 import Header from "../Header/Header";
 import Total from "../Total/Total";
-import Grafico from "../Chart/Grafico";
-import { DadosUsuario } from "../../Dados";
+import Grafico from "../Grafico/Grafico";
+import { DadosUsuario } from "../Grafico/Dados";
 import Bancos from "../Bancos/Bancos";
 import Transacoes from "../Transacoes/Transacoes";
 
@@ -31,7 +31,6 @@ function Home() {
       <Total />
       <Grafico saldoGrafico={dadosSaldo} />
       <Bancos />
-      <Transacoes />
     </HomeContainer>
   );
 }

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+//apenas para facilitar o posicionamento de elementos em coluna
 const WrapperColumn = styled.div`
   display: flex;
   flex-direction: column;

@@ -5,12 +5,13 @@ import Total from "../Total/Total";
 import Grafico from "../Grafico/Grafico";
 import { DadosUsuario } from "../Grafico/Dados";
 import Bancos from "../Bancos/Bancos";
-import Transacoes from "../Transacoes/Transacoes";
+//import Transacoes from "../Transacoes/Transacoes";
 
 function Home() {
   const [dadosSaldo, setDadosSaldo] = useState({
     labels: DadosUsuario.map((dados) => dados.mes),
 
+    //estilizando o grafico
     datasets: [
       {
         label: "Gastos",

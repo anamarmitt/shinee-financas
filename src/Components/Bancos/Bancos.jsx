@@ -5,7 +5,7 @@ import BancoCadastradoContainer from "./BancoCadastrado.style";
 import Transacoes from "../Transacoes/Transacoes";
 
 function Bancos() {
-  let nextId = 3;
+  //let nextId = 3;
 
   const bancosCadastrados = [
     {
@@ -24,17 +24,22 @@ function Bancos() {
     },
   ];
 
+  //dois primeiros bancos em um array onde os outros serão cadastrados, passei um bom tempo tentando fazer essa parte com push
+
   const [ids, setIds] = useState(3);
   const [saldo, setSaldo] = useState(0);
   //const [agencia, setAgencia] = useState("")
   //const [conta, setConta] = useState("")
+
+  //acabei nao usando  agencia e conta pq nao seriam exibidas no componente de banco na interface
   const [nome, setNome] = useState("");
   const [cadastros, setCadastros] = useState(bancosCadastrados);
 
   const limparCadastro = () => {
     setNome("");
-    console.log("AAAAAAAAAAAAAAAAAAAAAAAAA");
     setSaldo(0);
+
+    // usei isso aqui pra tentar achar essa funçao no console > console.log("AAAAAAAAAAAAAAAAAAAAAAAAA");
   };
 
   const cadastrarConta = () => {
@@ -43,7 +48,8 @@ function Bancos() {
       nome: nome,
       saldo: saldo,
     };
-    console.log(novaConta);
+
+    //console.log(novaConta);
 
     setCadastros([...cadastros, novaConta]);
 
@@ -55,7 +61,7 @@ function Bancos() {
     setCadastros(bancosAtuais);
   };
 
-  //funciona mas deleta todos os novos itens tentar pop
+  //funciona mas deleta todos os novos itens tentar pop < acabei nao tentando pq a pessoa teria que deletar todas as contas começando da ultima se quisesse deletar a primeira, concertei usando o id
 
   return (
     <>
@@ -63,6 +69,7 @@ function Bancos() {
         <h2>Meus Bancos</h2>
       </TotalStyled>
       <CadastroContainer>
+        {/*pegando só o valor da conta pra cadastrar o nome, mas pensei primeiro em fazer um menu dropdown com nomes de bancos para o usuario escolher e não nomear livremente*/}
         <input
           type="text"
           value={nome}
@@ -83,6 +90,7 @@ function Bancos() {
         </BancoCadastradoContainer>
       ))}
       <Transacoes bancos={cadastros} />
+      {/*chamei o componente aqui ao inves da home pra ficar mais facil quando fosse relacionar transaçoes e contas*/}
     </>
   );
 }

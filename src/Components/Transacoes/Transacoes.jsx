@@ -5,6 +5,7 @@ import BancoCadastradoContainer from "../Bancos/BancoCadastrado.style";
 import CadastroContainer from "../Bancos/Bancos.styled";
 
 function Transacoes({ bancos }) {
+  //usando o array de transacoes pro componente e cortando só as primeiras 3, começando no indice 0
   const [transacoes, setTransacoes] = useState(
     transacoesCadastradas.slice(0, 3)
   );
@@ -17,6 +18,7 @@ function Transacoes({ bancos }) {
       </TotalStyled>
 
       <CadastroContainer>
+        {/*pegando o valor do input*/}
         <input
           type="text"
           placeholder="Nome"
@@ -41,6 +43,7 @@ function Transacoes({ bancos }) {
         <button onClick={``}>Adcionar</button>
       </CadastroContainer>
 
+      {/*mapeando pelos dados das transacoes*/}
       {transacoes.map(({ tipo, data, valor }) => {
         return (
           <BancoCadastradoContainer>

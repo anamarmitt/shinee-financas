@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+//apenas pra facilitar o posicionamento de elementos
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;

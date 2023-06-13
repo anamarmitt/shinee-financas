@@ -10,6 +10,7 @@ box-sizing: border-box;
 
 p{
   line-height: 0.2rem;
+  
 }
 
 h1 {
@@ -37,6 +38,7 @@ input{
   border: none;
   box-shadow: none;
 }
+
 button{
   display: flex;
   justify-content: center;

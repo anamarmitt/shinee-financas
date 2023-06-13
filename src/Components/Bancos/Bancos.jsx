@@ -78,14 +78,18 @@ function Bancos() {
             setNome(e.target.value);
           }}
         ></input>
-        <input type="number" placeholder="Agência"></input>
-        <input type="number" placeholder="Numero da conta"></input>
+        <input type="text" inputMode="numeric" placeholder="Agência"></input>
+        <input
+          type="text"
+          inputMode="numeric"
+          placeholder="Nº da conta"
+        ></input>
         <button onClick={cadastrarConta}>Cadastrar</button>
       </CadastroContainer>
       {cadastros.map((banco) => (
         <BancoCadastradoContainer key={banco.id}>
           <p>{banco.nome}</p>
-          <p>{banco.saldo}</p>
+          <p>R${banco.saldo}</p>
           <button onClick={() => deletarBanco(banco.id)}>Deletar</button>
         </BancoCadastradoContainer>
       ))}

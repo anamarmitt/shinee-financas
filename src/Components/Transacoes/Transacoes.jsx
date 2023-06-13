@@ -3,13 +3,37 @@ import { transacoesCadastradas } from "./DadosTransacoes";
 import TotalStyled from "../Total/Total.style";
 import BancoCadastradoContainer from "../Bancos/BancoCadastrado.style";
 import CadastroContainer from "../Bancos/Bancos.styled";
+import Wrapper from "../Wrappers/Wrapper.style";
 
-function Transacoes({ bancos }) {
+function Transacoes() {
   //usando o array de transacoes pro componente e cortando só as primeiras 3, começando no indice 0
   const [transacoes, setTransacoes] = useState(
-    transacoesCadastradas.slice(0, 3)
+    transacoesCadastradas.reverse().slice(0, 3) //reverse pra exibir as ultimas primeiro
   );
-  //transacoesCadastradas.filter((item) => item.bancoId);
+  const [tipo, setTipo] = useState();
+  const [data, setData] = useState();
+  const [valor, setValor] = useState();
+  const [ids, setIds] = useState();
+
+  const limparTransacao = () => {
+    setTipo("");
+    setData("");
+    setValor("");
+  };
+
+  const cadastrarTrasacao = () => {
+    const novaTransacao = {
+      id: ids,
+      tipo: tipo,
+      data: data,
+      valor: valor,
+    };
+
+    setTransacoes([...transacoes, novaTransacao]);
+
+    setIds(ids + 1);
+    limparTransacao();
+  };
 
   return (
     <>
@@ -23,24 +47,24 @@ function Transacoes({ bancos }) {
           type="text"
           placeholder="Nome"
           onChange={(e) => {
-            setNome(e.target.value);
+            setTipo(e.target.value);
           }}
         ></input>
         <input
           type="text"
-          placeholder="Data"
+          placeholder="dia/mes/ano"
           onChange={(e) => {
-            setNome(e.target.value);
+            setData(e.target.value);
           }}
         ></input>
         <input
-          type="number"
+          type="text"
           placeholder="Valor"
           onChange={(e) => {
-            setNome(e.target.value);
+            setValor(e.target.value);
           }}
         ></input>
-        <button onClick={``}>Adcionar</button>
+        <button onClick={cadastrarTrasacao}>Adcionar</button>
       </CadastroContainer>
 
       {/*mapeando pelos dados das transacoes*/}
